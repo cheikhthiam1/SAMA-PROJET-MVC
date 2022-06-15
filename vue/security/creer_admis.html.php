@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/creer_admin.css">
 </head>
 <body>
 form class="form" action="<?php echo WEB_ROUTE ?>" method="post">
@@ -21,10 +22,10 @@ form class="form" action="<?php echo WEB_ROUTE ?>" method="post">
 
          </div>
          <ul>
-         <a href=""> <li>liste Question</li>   </a>
-         <a href="<?= ROUTE_DIR."?controller=securityController&view=accueil1" ?>"> <li>Creer Admin</li>  </a>
-         <a href=""> <li>Liste Joueur</li>  </a>
-         <a href=""> <li>Creer Question</li>  </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_question"?> ">liste Question </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_admin"?> "> Creer Admin  </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_joueur" ?>"> Liste Joueur </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_questions" ?> ">Creer Question  </a>
         
          </ul>
         </div>

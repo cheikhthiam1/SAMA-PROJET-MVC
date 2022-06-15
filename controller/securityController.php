@@ -16,8 +16,14 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
         }
         elseif($_GET['view'] == "deconnexion") {
             require_once(ROUTE_DIR.'vue/security/connexion.html.php');
-        } elseif($_GET['view'] == "creer_question") {
-            require_once(ROUTE_DIR.'vue/security/creer_question.html.php');
+        } elseif($_GET['view'] == "creer_questions") {
+            require_once(ROUTE_DIR.'vue/security/creer_questions.html.php');
+        }elseif($_GET['view'] == "creer_admin") {
+            require_once(ROUTE_DIR.'vue/security/creer_admin.html.php');
+        }elseif($_GET['view'] == "liste_question") {
+            require_once(ROUTE_DIR.'vue/security/liste_question.html.php');
+        }elseif($_GET['view'] == "liste_joueur") {
+            require_once(ROUTE_DIR.'vue/security/liste_joueur.html.php');
         }
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {

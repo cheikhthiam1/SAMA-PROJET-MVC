@@ -22,29 +22,16 @@
 
          </div>
          <ul>
-         <a href=""> <li>liste Question</li>   </a>
-         <a href="<?= ROUTE_DIR."?controller=securityController&view=accueil1" ?>"> <li>Creer Admin</li>  </a>
-         <a href=""> <li>Liste Joueur</li>  </a>
-         <a href=""> <li>Creer Question</li>  </a>
-         
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_question"?> ">liste Question </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_admin"?> "> Creer Admin  </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_joueur" ?>"> Liste Joueur </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_questions" ?> ">Creer Question  </a>
+        
         
          </ul>
         </div>
         <div class="section2">
-        <label for="">les langages Web</label><br>
-        <input type="text"><br>
-        <label for="">D'ou vient le Corona</label><br>
-        <input type="text"><br>
-        <label for="Quel terme definit le langage qui s'adapte sur Android et sur IOS"></label><br>
-        <input type="text"><br>
-        <label for="">Quel est la premiere ecole de codage gratuite au senegal</label><br>
-        <input type="text"><br>
-        <label for="">Les precurseurs de la revolution digitale</label><br>
-        <input type="text"><br>
-        <button>Creer Compte</button>
-        <button>choisir un fichier</button>
-        </div>
-    </div>
+     <p>list question</p>
 </form> 
 </body>
 </html>

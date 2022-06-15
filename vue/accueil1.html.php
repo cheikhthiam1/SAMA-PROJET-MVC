@@ -22,10 +22,10 @@
 
          </div>
          <ul>
-         <a href=""> <li>liste Question</li>   </a>
-         <a href="<?= ROUTE_DIR."?controller=securityController&view=accueil1" ?>"> <li>Creer Admin</li>  </a>
-         <a href=""> <li>Liste Joueur</li>  </a>
-         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_questions" ?>"><li>Creer Question</li>  </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_question"?> ">liste Question </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_admin"?> "> Creer Admin  </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=liste_joueur" ?>"> Liste Joueur </a>
+         <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_questions" ?> ">Creer Question  </a>
         
          </ul>
         </div>
