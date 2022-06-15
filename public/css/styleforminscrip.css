@@ -1,0 +1,35 @@
+.cadre {
+    align-items: center;
+    background-color: red;
+}
+.labels label{
+    font-size: 20px;
+    color: white;
+    
+}
+.labels input{
+    width: 30em;
+    height: 30px;
+    border-radius: 10px;
+    
+}
+.labels{
+    margin-top: 2%;
+    margin-left: 40%;
+}
+button{
+    margin-top: 2%;
+    margin-left: 53%;
+    height: 30px;
+    border-radius: 15%;
+}
+h1{
+    margin-left: 48%;
+    font-size: 3em;
+    color: white;
+}
+a{
+    margin-left: 50%;
+    font-size: 30px;
+
+}
