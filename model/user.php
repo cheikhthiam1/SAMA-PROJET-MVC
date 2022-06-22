@@ -92,4 +92,17 @@ function login_password_exist($login, $password) {
     }
     return $yes;
 } */
+function find_login_password(string $login, string $password){
+    $arrayUser=get_list_user();
+    foreach($arrayUser as $user){
+        if ($user['login']==$login && $user['password']==$password) {
+            return $user;
+        }
+    }
+    return [];
+}
+function generate_id():string{
+    $tab  ='02346790';
+    return rand($tab,6);
+}
 ?>

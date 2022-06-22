@@ -1,4 +1,5 @@
 <?php 
+
 if($_SERVER['REQUEST_METHOD'] == "GET") {
     if (isset($_GET['view'])) {
         if ($_GET['view'] == "add.user") {
@@ -11,8 +12,10 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
         }elseif ($_GET['view'] == "edit") {
             $user=get_user_by_id($_GET['id']);
             require_once(ROUTE_DIR.'vue/add_user.html.php');
-
+        }elseif ($_GET['view'] == "creerAdmin") {
+            require_once(ROUTE_DIR.'vue/admin/creer.admin.html.php');
         }
+        
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action'])) {
@@ -25,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
 }
 
 //FONCTION POUR AJOUTER OU MODIFIER
-function add(array $data){
+/* function add(array $data)
     $arrayError = [];
     extract($data);
     valid_champ_user($arrayError, $_POST['nom'], 'nom');
@@ -34,11 +37,8 @@ function add(array $data){
     valid_champ_user($arrayError, $_POST['email'], 'email');
     valid_champ_user($arrayError, $_POST['password'], 'password');
     valid_champ_user($arrayError, $_POST['confirmPassword'], 'confirmPassword');
-    if (empty($arrayError)) {
-        
-        
-
-        if($data['id'] != ""){
+    if (empty($arrayError)) 
+        f($data['id'] != ""){
 
             modification($data);
         }else{
@@ -49,19 +49,6 @@ function add(array $data){
                 "telephone" => $_POST['telephone'],
                 "email" => $_POST['email'],
                 "password" => $_POST['password'],
-                "role" => "ROLE_JOUEUR",
+                "role" => "ROLE_ADMIN",
                 "id"=>uniqid()
-            ];
-            addUser($user);
-        }
-
-       
-    } else {
-        $_SESSION['arrayError'] = $arrayError;
-    }
-
-    header("location:".WEB_ROUTE."?controller=userController&view=list.user");
-}
-
-
-?>
+            ] */

@@ -6,16 +6,13 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
             require_once(ROUTE_DIR.'vue/security/connexion.html.php');
         }elseif ($_GET['view'] == "accueil1") {
             require_once(ROUTE_DIR.'vue/accueil1.html.php');
-        } elseif ($_GET['view'] == "deconnexion") {
-            destroy_session();
-            require_once(ROUTE_DIR.'vue/security/deconnexion.html.php');
         }elseif($_GET['view'] == "inscription") {
             require_once(ROUTE_DIR.'vue/security/inscription.html.php');
         } elseif($_GET['view'] == "accueil") {
             require_once(ROUTE_DIR.'vue/security/accueil1.html.php');
         }
         elseif($_GET['view'] == "deconnexion") {
-            require_once(ROUTE_DIR.'vue/security/connexion.html.php');
+            deconnexion();
         } elseif($_GET['view'] == "creer_questions") {
             require_once(ROUTE_DIR.'vue/security/creer_questions.html.php');
         }elseif($_GET['view'] == "creer_admin") {
@@ -23,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
         }elseif($_GET['view'] == "liste_question") {
             require_once(ROUTE_DIR.'vue/security/liste_question.html.php');
         }elseif($_GET['view'] == "liste_joueur") {
+            $users = get_list_user();
             require_once(ROUTE_DIR.'vue/security/liste_joueur.html.php');
         }
     }
@@ -46,12 +44,22 @@ function inscription($inscription) {
             valid_champ_user($arrayError, $password, 'password');
             valid_champ_user($arrayError, $confirmPassword, 'confirmPassword');
             if (empty($arrayError)) {
-                
+            if (est_vide($prenom , $nom)) {
+                $_SESSION['arrayError'] = $arrayError;
+                header("location:".WEB_ROUTE."?controller=securityController&view=inscription");
+            }
+            if ($arrayError) {
+                $user= find_login_password($login, $password);
+            }   if (est_admin()) {
+            }else {
+            }
                 $user = [
                     "nom" => $nom,
                     "prenom" => $prenom,
                     "email" => $email,
                     "password" => $password,
+                    "role"=>"ROLE_JOUEUR"
+            
                 ];
                 
                 addUser($user);
@@ -83,8 +91,7 @@ function connexion($data) {
         
         if ($result != null) {
             $_SESSION['userConnected'] = $result;
-            header("location:".WEB_ROUTE."?controller=securityController&view=accueil1");
-            
+            header("location:".WEB_ROUTE."?controller=adminController&view=creerAdmin");
         } else {
             $arrayError['error'] = "email ou mot de passe incorrect";
             $_SESSION['arrayError'] = $arrayError;
@@ -96,8 +103,9 @@ function connexion($data) {
     }
 }
 
-  function deconnexion(){
+    function deconnexion(){
         unset($_SESSION['userConnected']); 
-  }
- 
-    ?>
+        header("location:".WEB_ROUTE."?controller=securityController&view=connexion");
+    }
+
+?>

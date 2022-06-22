@@ -1,35 +1,46 @@
-.cadre {
-    align-items: center;
-    background-color: red;
-}
-.labels label{
-    font-size: 20px;
-    color: white;
-    
-}
-.labels input{
-    width: 30em;
-    height: 30px;
-    border-radius: 10px;
-    
-}
-.labels{
-    margin-top: 2%;
-    margin-left: 40%;
-}
-button{
-    margin-top: 2%;
-    margin-left: 53%;
-    height: 30px;
-    border-radius: 15%;
-}
-h1{
-    margin-left: 48%;
-    font-size: 3em;
-    color: white;
-}
-a{
-    margin-left: 50%;
-    font-size: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.form-inscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh ;
+}
+
+form{
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:20px;
+}
+.mybtn{
+    padding: 9px 22px;
+    background-color: #007bff;
+    border: #007bff;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mybtn.deconnect{
+    background-color: red;
+    border: red;
+}
+.btn-registration{
+    padding: 10px ;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    color: blue;
+    margin: 0;
+    float: right;
+}
+span{
+    color: red;
+    font-size: 12px;
+    display: block;
 }
