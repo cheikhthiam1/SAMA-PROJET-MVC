@@ -12,18 +12,29 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
         }elseif ($_GET['view'] == "edit") {
             $user=get_user_by_id($_GET['id']);
             require_once(ROUTE_DIR.'vue/add_user.html.php');
-        }elseif ($_GET['view'] == "creerAdmin") {
+
+        }elseif($_GET['view'] == "creer_question") {
+            require_once(ROUTE_DIR.'vue/admin/creer.questions.html.php');
+
+        }elseif($_GET['view'] == "creer_admin") {
             require_once(ROUTE_DIR.'vue/admin/creer.admin.html.php');
+
+        }elseif($_GET['view'] == "liste_question") {
+            require_once(ROUTE_DIR.'vue/admin/liste.question.html.php');
+
+        }elseif($_GET['view'] == "liste_joueur") {
+            $users = get_list_user();
+            require_once(ROUTE_DIR.'vue/admin/liste.joueur.html.php');
         }
         
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action'])) {
-        if ($_POST['action'] == "add.user") {
-           add($_POST);
-        }elseif ($_POST['action'] == "edit") {
-            add($_POST);
-         }
+        if ($_POST['action'] == "addQuestion") {
+            unset($_POST['action']);
+            unset($_POST['controller']);
+            new_question($_POST);
+        }
     }
 }
 
@@ -52,3 +63,25 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
                 "role" => "ROLE_ADMIN",
                 "id"=>uniqid()
             ] */
+function new_question($data){
+    $arrayError = [];
+    extract($_POST);
+
+            valid_champ_user($arrayError, $libelle, 'libelle');
+            valid_champ_user($arrayError, $nombredepoint, 'nombredepoint');
+
+            if (!isset($reponse)) {
+                $arrayError["reponse"] = "Veuillez choisir une reponse";
+            }
+
+            if (empty($arrayError)) {                
+                    
+                    add_question($data);
+                    header("location:".WEB_ROUTE."?controller=adminController&view=liste_question");
+                
+            } else {
+                $_SESSION['arrayError'] = $arrayError;
+                header("location:".WEB_ROUTE."?controller=adminController&view=creer_question");
+            }
+
+}

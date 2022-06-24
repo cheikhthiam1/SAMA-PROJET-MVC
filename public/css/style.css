@@ -170,11 +170,14 @@ label {
     display: block;
     color: #000000;
 }
-input{
+input[text],
+input[password],
+ .myselect{
   border: 1px solid #ddd;
   width: 350px;
   padding: 18px;
   border-radius: 5px;
+  background-color: transparent;
 }
 
 .myGroup{
@@ -184,27 +187,42 @@ input{
   padding: 7px;
 }
 
+.mytextarea{
+  border: 1px solid #ddd;
+  border-radius: 5px;
 
+}
 .groupForm , .crate-admin{
   display: flex;
 }
 .navbar{
-  padding: 12px;
-  
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 350px;
+  height: 430px;
+  margin: 30px;
+}
+
+.avatar{
+  background-color: red;
+  padding: 0;
 }
 
 
 ul{
-  background-color: #ddd;
-  width: 350px;
-  height: 400px;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
 }
-li{
+
+li, a{
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
   list-style-type: none;
   text-align: left;
+  color: #000000;
+}
+.link{
+  color: #000000;
 }
 /*  */
 
@@ -256,7 +274,7 @@ a {
 
 #logo{
     width: 80px;
-    height: 70px;
+    height: 73px;
 }
 .topnav {
     background-color: red;

@@ -1,20 +1,23 @@
 <div class="navbar">
+  <div class="avatar">
+    
+  </div>
   <ul>
-  <li>
-    <a href= "<?= ROUTE_DIR."?controller=securityController&view=liste_question"?> ">liste Question </a>
-  </li>
+    <li>
+      <a href= "<?= ROUTE_DIR."?controller=adminController&view=liste_question"?> " class="link" >liste Question </a>
+    </li>
 
-  <li>
-    <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_admin"?> "> Creer Admin  </a>
-  </li>
+    <li>
+      <a href="<?= ROUTE_DIR."?controller=adminController&view=creer_admin"?> " class="link"  > Creer Admin  </a>
+    </li>
 
-  <li>
-    <a href="<?= ROUTE_DIR."?controller=userController&view=liste_joueur" ?>"> Liste Joueur </a>
-  </li>
+    <li>
+      <a href="<?= ROUTE_DIR."?controller=adminController&view=liste_joueur" ?>" class="link" > Liste Joueur </a>
+    </li>
 
-  <li>
-    <a href="<?= ROUTE_DIR."?controller=securityController&view=creer_questions" ?> ">Creer Question  </a>
-  </li>
-</ul>
+    <li>
+      <a href="<?= ROUTE_DIR."?controller=adminController&view=creer_question" ?> " class="link">Creer Question  </a>
+    </li>
+  </ul>
 </div>
 

@@ -1,0 +1,31 @@
+[
+    {
+        "libelle": "test",
+        "nombredepoint": "4",
+        "typedereponse": "simple"
+    },
+    {
+        "controller": "adminController",
+        "action": "addQuestion",
+        "libelle": "test",
+        "nombredepoint": "6",
+        "typedereponse": "simple"
+    },
+    {
+        "controller": "adminController",
+        "action": "addQuestion",
+        "libelle": "ssl",
+        "nombredepoint": "3",
+        "typedereponse": "simple"
+    },
+    null,
+    {
+        "libelle": "test",
+        "nombredepoint": "3",
+        "typedereponse": "simple",
+        "reponse": [
+            "response 1",
+            "reponse 2"
+        ]
+    }
+]

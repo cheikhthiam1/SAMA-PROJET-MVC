@@ -13,16 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
         }
         elseif($_GET['view'] == "deconnexion") {
             deconnexion();
-        } elseif($_GET['view'] == "creer_questions") {
-            require_once(ROUTE_DIR.'vue/security/creer_questions.html.php');
-        }elseif($_GET['view'] == "creer_admin") {
-            require_once(ROUTE_DIR.'vue/security/creer_admin.html.php');
-        }elseif($_GET['view'] == "liste_question") {
-            require_once(ROUTE_DIR.'vue/security/liste_question.html.php');
-        }elseif($_GET['view'] == "liste_joueur") {
-            $users = get_list_user();
-            require_once(ROUTE_DIR.'vue/security/liste_joueur.html.php');
-        }
+        } 
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action'])) {
@@ -91,7 +82,7 @@ function connexion($data) {
         
         if ($result != null) {
             $_SESSION['userConnected'] = $result;
-            header("location:".WEB_ROUTE."?controller=adminController&view=creerAdmin");
+            header("location:".WEB_ROUTE."?controller=adminController&view=creer_admin");
         } else {
             $arrayError['error'] = "email ou mot de passe incorrect";
             $_SESSION['arrayError'] = $arrayError;

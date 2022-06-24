@@ -13,16 +13,19 @@ body{
 form{
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    padding:20px;
+    padding:0 20px;
 }
 .mybtn{
     padding: 9px 22px;
-    background-color: #007bff;
-    border: #007bff;
+    background-color: red;
+    border: red;
     color: #fff;
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
+}
+.mybtn.plus{
+    margin-top: 25px;
 }
 .mybtn.deconnect{
     background-color: red;
@@ -44,3 +47,30 @@ span{
     font-size: 12px;
     display: block;
 }
+
+
+/* able */
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 900px;
+    
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 14px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: red;
+    color: white;
+  }
